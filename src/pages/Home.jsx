@@ -14,6 +14,9 @@ export const Home = () => {
 				Sayaç : {data} <IonButton onClick={() => setData(data + 1)}>TIKLA</IonButton>
 			</div>
 			<div>Sayaç : {data}</div>
+			<div>Sayaç : {data}</div>
+			<div>Sayaç : {data}</div>
+			<div>Sayaç : {data}</div>
 		</div>
 	)
 }
