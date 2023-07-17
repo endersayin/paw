@@ -19,7 +19,8 @@ import '@ionic/react/css/text-alignment.css'
 import '@ionic/react/css/text-transformation.css'
 
 /* Theme variables */
-import Home from './Pages/Home'
+import Home from './pages/Home'
+
 import './theme/variables.css'
 
 setupIonicReact()
