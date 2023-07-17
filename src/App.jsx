@@ -20,7 +20,6 @@ import '@ionic/react/css/text-transformation.css'
 
 /* Theme variables */
 import Home from './pages/Home'
-
 import './theme/variables.css'
 
 setupIonicReact()
