@@ -1,0 +1,7 @@
+{
+  "name": "paw",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
