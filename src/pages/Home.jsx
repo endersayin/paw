@@ -1,62 +1,39 @@
-import { IonAlert, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonChip, IonContent, IonItem, IonPage } from '@ionic/react'
-import React from 'react'
+import { IonAvatar, IonButton, IonCol, IonContent, IonGrid, IonInput, IonPage, IonRow } from '@ionic/react'
+import React, { useEffect, useState } from 'react'
 
 export const Home = () => {
+	const [data, setData] = useState('')
+
+	useEffect(() => {
+		console.log(data)
+	}, [data])
 	return (
-		<IonPage scrollY>
+		<IonPage>
 			<IonContent>
-				<IonCardContent>
-					<IonCard>
-						<div>
-							<img alt="Silhouette of mountains" src="./kedi-01.jpeg" />
-							<IonCardHeader>
-								<IonCardTitle>Kedi</IonCardTitle>
-								<IonCardSubtitle>Kedi 123456</IonCardSubtitle>
-							</IonCardHeader>
-							<IonItem>
-								<IonChip color="medium">Mavi</IonChip>
-								<IonChip color="medium">Scottish</IonChip>
-								<IonChip color="medium">Kedi</IonChip>
-							</IonItem>
-
-							<IonCardContent>
-								<p>Yapılan araştırmalar kedilerin köpeklerden çok daha bağımsız olduğunu gösteriyor. Kedilere bir şey yaptırmak zordur; onlar kendi bildiklerini yapar.</p>
-								<div>
-									<IonButton style={{ marginTop: '50px' }} id="present-alert" size="medium" expand="block">
-										Click Me
-									</IonButton>
-									<IonAlert trigger="present-alert" header="Alert" subHeader="Important message" message="This is an alert!" buttons={['OK']}></IonAlert>
-								</div>
-							</IonCardContent>
-						</div>
-					</IonCard>
-				</IonCardContent>
-				<IonCardContent>
-					<IonCard>
-						<div>
-							<img alt="Silhouette of mountains" src="./kedi-01.jpeg" />
-							<IonCardHeader>
-								<IonCardTitle>Kedi</IonCardTitle>
-								<IonCardSubtitle>Kedi 123456</IonCardSubtitle>
-							</IonCardHeader>
-							<IonItem>
-								<IonChip color="medium">Mavi</IonChip>
-								<IonChip color="medium">Scottish</IonChip>
-								<IonChip color="medium">Kedi</IonChip>
-							</IonItem>
-
-							<IonCardContent>
-								<p>Yapılan araştırmalar kedilerin köpeklerden çok daha bağımsız olduğunu gösteriyor. Kedilere bir şey yaptırmak zordur; onlar kendi bildiklerini yapar.</p>
-								<div>
-									<IonButton style={{ marginTop: '50px' }} id="present-alert" size="medium" expand="block">
-										Click Me
-									</IonButton>
-									<IonAlert trigger="present-alert" header="Alert" subHeader="Important message" message="This is an alert!" buttons={['OK']}></IonAlert>
-								</div>
-							</IonCardContent>
-						</div>
-					</IonCard>
-				</IonCardContent>
+				<IonGrid style={{ marginTop: '40%' }}>
+					<IonRow className="ion-align-items-center ion-justify-content-center">
+						<IonAvatar style={{ margin: '5vh 0' }}>
+							<img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+						</IonAvatar>
+					</IonRow>
+					<IonRow style={{ margin: '0 5vh' }}>
+						<IonCol>
+							<IonInput defaultValue={data} label="E-postanız" onIonInput={e => setData(e.detail.value)} type="email" labelPlacement="floating" counter={true} maxlength={20}></IonInput>
+						</IonCol>
+					</IonRow>
+					<IonRow style={{ margin: '0 5vh' }}>
+						<IonCol>
+							<IonInput defaultValue={data} label="Şifreniz" onIonInput={e => setData(e.detail.value)} type="password" labelPlacement="floating" counter={true} maxlength={20}></IonInput>
+						</IonCol>
+					</IonRow>
+					<IonRow style={{ margin: '10% 5vh' }}>
+						<IonCol>
+							<IonButton onClick={() => console.log(data)} expand="block">
+								Giriş Yap
+							</IonButton>
+						</IonCol>
+					</IonRow>
+				</IonGrid>
 			</IonContent>
 		</IonPage>
 	)
